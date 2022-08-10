@@ -26,7 +26,7 @@ void Driver::scan_begin()
     else
     {
         stream.open(file);
-        std::cout << file << std::endl;
+        /* std::cout << file << std::endl; */
         scanner.yyrestart(&stream);
     }
 }
@@ -44,7 +44,7 @@ int Driver::executeProgram() const
     Interpreter interpreter;
     
     program->Accept(scope_tree_visitor);
-    program->Accept(print_visitor);
+    /* program->Accept(print_visitor); */
     if (all_errors.empty()) {
         program->Accept(interpreter);
     }
