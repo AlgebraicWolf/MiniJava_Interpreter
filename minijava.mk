@@ -1,7 +1,7 @@
 CMAKE_BUILD_DIR = build
 CMAKE_SOURCE_DIR = .
 
-.PHONY: all $(CMAKE_BUILD_DIR)/build_executable
+.PHONY: clean all $(CMAKE_BUILD_DIR)/build_executable
 
 all : $(CMAKE_BUILD_DIR)/build_executable
 
@@ -10,3 +10,6 @@ $(CMAKE_BUILD_DIR)/Makefile: $(CMAKE_SOURCE_DIR)/CMakeLists.txt
 
 $(CMAKE_BUILD_DIR)/build_executable: $(CMAKE_BUILD_DIR)/Makefile
 	$(MAKE) -C $(@D)
+
+clean:
+	$(RM) -r $(CMAKE_BUILD_DIR)
