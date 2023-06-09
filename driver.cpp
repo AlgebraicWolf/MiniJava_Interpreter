@@ -38,11 +38,10 @@ void Driver::scan_end()
 
 int Driver::executeProgram() const
 {
-    PrintVisitor print_visitor;
     ScopeTreeVisitor scope_tree_visitor;
     GarbageCollector collector;
     Interpreter interpreter;
-    
+
     program->Accept(scope_tree_visitor);
     /* program->Accept(print_visitor); */
     if (all_errors.empty()) {
@@ -52,6 +51,6 @@ int Driver::executeProgram() const
         return -1;
     }
     program->Accept(collector);
-    
+
     return 0;
 }

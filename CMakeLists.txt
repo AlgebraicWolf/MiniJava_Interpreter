@@ -2,7 +2,7 @@ cmake_minimum_required(VERSION 3.16)
 
 SET(CMAKE_CXX_STANDARD 17)
 
-SET(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall -Wextra -Werror")
+SET(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall -Wextra -Werror -fprofile-arcs -ftest-coverage")
 
 project(mini_java)
 set(
@@ -56,7 +56,7 @@ add_executable(
         Expressions/GreaterExpr.cpp
         Expressions/LessExpr.h
         Expressions/LessExpr.cpp
-    
+
         Expressions/IdentExpr.h
         Expressions/IdentExpr.cpp
         Expressions/AddExpr.h
@@ -80,8 +80,8 @@ add_executable(
         ExecBlocks/ExecCode.cpp
         ExecBlocks/While.h
         ExecBlocks/While.cpp
-   
-   
+
+
         Visitors/Interpreter.h
         Visitors/Interpreter.cpp
         ExecBlocks/MethodDeclaration.h
@@ -119,7 +119,7 @@ add_executable(
         SubsidiaryClasses/ExprList.cpp
         SubsidiaryClasses/ExprList.h
         Visitors/AllIncludes.h
-        
+
         Expressions/NumExpr.cpp
         Expressions/NumExpr.h
         Expressions/AtExpr.cpp
@@ -133,9 +133,6 @@ add_executable(
 
         Expressions/SimpleType.cpp
         Expressions/SimpleType.h
-
-        Visitors/PrintVisitor.cpp
-        Visitors/PrintVisitor.h
 
         Visitors/ScopeTreeVisitor.h
         Visitors/ScopeTreeVisitor.cpp
